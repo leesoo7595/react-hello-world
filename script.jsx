@@ -15,20 +15,20 @@ class ProfileLink extends React.Component {
   }
 }
 
+class Content extends React.Component {
+  getUrl() {
+    return 'http://www.naver.com'
+  }
+  render() {
+    return (
+      <div>
+        <p>Your REST API URL is: <a href={this.getUrl()}>{this.getUrl()}</a></p>
+      </div>
+    )
+  }
+}
+
 ReactDOM.render(
-  <div>
-    <HelloWorld
-      id='apple'
-      fruitName='APPLE'
-      title='Delicious Red Fruit' />
-    <HelloWorld
-      id='grape'
-      fruitName='Grape'
-      title='Delicious Purple Fruit' />
-    <HelloWorld
-      id='orange'
-      fruitName='Orange'
-      title='Delicious Orange Fruit' />
-  </div>,
+  <Content/>,
   document.getElementById('content')
 )

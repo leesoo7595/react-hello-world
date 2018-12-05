@@ -64,19 +64,41 @@ var ProfileLink = function (_React$Component2) {
   return ProfileLink;
 }(React.Component);
 
-ReactDOM.render(React.createElement(
-  'div',
-  null,
-  React.createElement(HelloWorld, {
-    id: 'apple',
-    fruitName: 'APPLE',
-    title: 'Delicious Red Fruit' }),
-  React.createElement(HelloWorld, {
-    id: 'grape',
-    fruitName: 'Grape',
-    title: 'Delicious Purple Fruit' }),
-  React.createElement(HelloWorld, {
-    id: 'orange',
-    fruitName: 'Orange',
-    title: 'Delicious Orange Fruit' })
-), document.getElementById('content'));
+var Content = function (_React$Component3) {
+  _inherits(Content, _React$Component3);
+
+  function Content() {
+    _classCallCheck(this, Content);
+
+    return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).apply(this, arguments));
+  }
+
+  _createClass(Content, [{
+    key: 'getUrl',
+    value: function getUrl() {
+      return 'http://www.naver.com';
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'p',
+          null,
+          'Your REST API URL is: ',
+          React.createElement(
+            'a',
+            { href: this.getUrl() },
+            this.getUrl()
+          )
+        )
+      );
+    }
+  }]);
+
+  return Content;
+}(React.Component);
+
+ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
