@@ -8,30 +8,34 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DateTimeNow = function (_React$Component) {
-  _inherits(DateTimeNow, _React$Component);
+var helloWorldReactElement = React.createElement(
+  'h1',
+  null,
+  'Hello World!'
+);
 
-  function DateTimeNow() {
-    _classCallCheck(this, DateTimeNow);
+var HelloWorld = function (_React$Component) {
+  _inherits(HelloWorld, _React$Component);
 
-    return _possibleConstructorReturn(this, (DateTimeNow.__proto__ || Object.getPrototypeOf(DateTimeNow)).apply(this, arguments));
+  function HelloWorld() {
+    _classCallCheck(this, HelloWorld);
+
+    return _possibleConstructorReturn(this, (HelloWorld.__proto__ || Object.getPrototypeOf(HelloWorld)).apply(this, arguments));
   }
 
-  _createClass(DateTimeNow, [{
+  _createClass(HelloWorld, [{
     key: 'render',
     value: function render() {
-      var dateTimeNow = new Date().toLocaleString();
       return React.createElement(
-        'span',
+        'div',
         null,
-        'Current date and time is ',
-        dateTimeNow,
-        '.'
+        helloWorldReactElement,
+        helloWorldReactElement
       );
     }
   }]);
 
-  return DateTimeNow;
+  return HelloWorld;
 }(React.Component);
 
-ReactDOM.render(React.createElement(DateTimeNow, null), document.getElementById('content'));
+ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));

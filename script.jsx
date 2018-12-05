@@ -1,11 +1,15 @@
-class DateTimeNow extends React.Component {
-  render() {
-    let dateTimeNow = new Date().toLocaleString()
-    return <span>Current date and time is {dateTimeNow}.</span>
+let helloWorldReactElement = <h1>Hello World!</h1>
+
+class HelloWorld extends React.Component {
+  render () {
+    return <div>
+      {helloWorldReactElement}
+      {helloWorldReactElement}
+    </div>
   }
 }
 
 ReactDOM.render(
-  <DateTimeNow/>,
+  <HelloWorld/>,
   document.getElementById('content')
 )
