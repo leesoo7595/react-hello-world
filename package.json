@@ -1,15 +1,22 @@
 {
   "name": "react-hello-world",
   "version": "1.0.0",
-  "description": "Start JSX",
-  "main": "index.js",
+  "description": "Study React JSX",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel script.jsx -o script.js -w"
+    "build": "./node-modules/.bin/babel script.jsx -o script.js -w"
   },
-  "author": "leesoo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leesoo7595/react-hello-world.git"
+  },
+  "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/leesoo7595/react-hello-world/issues"
+  },
+  "homepage": "https://github.com/leesoo7595/react-hello-world#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
