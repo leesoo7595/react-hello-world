@@ -71,12 +71,10 @@ ReactDOM.render(React.createElement(
     id: 'apple',
     fruitName: 'APPLE',
     title: 'Delicious Red Fruit' }),
-  ',',
   React.createElement(HelloWorld, {
     id: 'grape',
     fruitName: 'Grape',
     title: 'Delicious Purple Fruit' }),
-  ',',
   React.createElement(HelloWorld, {
     id: 'orange',
     fruitName: 'Orange',

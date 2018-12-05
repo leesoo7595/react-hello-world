@@ -20,11 +20,11 @@ ReactDOM.render(
     <HelloWorld
       id='apple'
       fruitName='APPLE'
-      title='Delicious Red Fruit' />,
+      title='Delicious Red Fruit' />
     <HelloWorld
       id='grape'
       fruitName='Grape'
-      title='Delicious Purple Fruit' />,
+      title='Delicious Purple Fruit' />
     <HelloWorld
       id='orange'
       fruitName='Orange'
