@@ -27,10 +27,11 @@ var HelloWorld = function (_React$Component) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'div',
-        null,
-        helloWorldReactElement,
-        helloWorldReactElement
+        'h1',
+        this.props,
+        'Hello ',
+        this.props.fruitName,
+        ' world!'
       );
     }
   }]);
@@ -63,4 +64,21 @@ var ProfileLink = function (_React$Component2) {
   return ProfileLink;
 }(React.Component);
 
-ReactDOM.render(React.createElement(ProfileLink, { url: 'http://www.naver.com', label: 'Profile for naver' }), document.getElementById('content'));
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(HelloWorld, {
+    id: 'apple',
+    fruitName: 'APPLE',
+    title: 'Delicious Red Fruit' }),
+  ',',
+  React.createElement(HelloWorld, {
+    id: 'grape',
+    fruitName: 'Grape',
+    title: 'Delicious Purple Fruit' }),
+  ',',
+  React.createElement(HelloWorld, {
+    id: 'orange',
+    fruitName: 'Orange',
+    title: 'Delicious Orange Fruit' })
+), document.getElementById('content'));
