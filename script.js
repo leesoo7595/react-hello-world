@@ -38,4 +38,29 @@ var HelloWorld = function (_React$Component) {
   return HelloWorld;
 }(React.Component);
 
-ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));
+var ProfileLink = function (_React$Component2) {
+  _inherits(ProfileLink, _React$Component2);
+
+  function ProfileLink() {
+    _classCallCheck(this, ProfileLink);
+
+    return _possibleConstructorReturn(this, (ProfileLink.__proto__ || Object.getPrototypeOf(ProfileLink)).apply(this, arguments));
+  }
+
+  _createClass(ProfileLink, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'a',
+        { href: this.props.url,
+          title: this.props.label,
+          target: '_blank' },
+        'Profile'
+      );
+    }
+  }]);
+
+  return ProfileLink;
+}(React.Component);
+
+ReactDOM.render(React.createElement(ProfileLink, { url: 'http://www.naver.com', label: 'Profile for naver' }), document.getElementById('content'));

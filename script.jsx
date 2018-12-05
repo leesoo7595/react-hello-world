@@ -9,7 +9,16 @@ class HelloWorld extends React.Component {
   }
 }
 
+class ProfileLink extends React.Component {
+  render() {
+    return <a href={this.props.url}
+      title={this.props.label}
+      target="_blank">Profile
+    </a>
+  }
+}
+
 ReactDOM.render(
-  <HelloWorld/>,
+  <ProfileLink url='http://www.naver.com' label='Profile for naver'/>,
   document.getElementById('content')
 )
