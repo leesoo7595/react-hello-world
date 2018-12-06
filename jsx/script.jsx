@@ -1,45 +1,18 @@
-let helloWorldReactElement = <h1>Hello World!</h1>
+// 안티패턴
+// const DigitalDisplay = function(props) {
+//   return <div>{DigitalDisplay.locale(props.time)}</div>
+// }
+// DigitalDisplay.local = (time) => {
+//   return <div>{DigitalDisplay.locale(props.time)}</div>
+// }
 
-class HelloWorld extends React.Component {
-  render () {
-    return <h1 {...this.props}>Hello {this.props.fruitName} world!</h1>
-  }
-}
-
-class ProfileLink extends React.Component {
-  render() {
-    return <a href={this.props.url}
-      title={this.props.label}
-      target="_blank">Profile
-    </a>
-  }
-}
-
-class Content extends React.Component {
-  getUrl() {
-    return 'http://www.naver.com'
-  }
-  render() {
-    return (
-      <div>
-        <p>Your REST API URL is: <a href={this.getUrl()}>{this.getUrl()}</a></p>
-      </div>
-    )
-  }
-}
-
-class CheckLogin extends React.Component {
-  render() {
-    let link
-    if (this.props.user.session)
-      link = <a href='/logout'>logout</a>
-    else
-      link = <a href='/login'>login</a>
-    return <div>{link}</div>
-  }
+// 모범 패턴
+const DigitalDisplay = function(props) {
+  const locale = time => (new Date(time)).toLocaleString('EU')
+  return <div>{locale(props.time)}</div>
 }
 
 ReactDOM.render(
-  <CheckLogin/>,
+  <DigitalDisplay/>,
   document.getElementById('content')
 )
