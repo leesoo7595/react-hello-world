@@ -15,12 +15,16 @@ var Clock = function (_React$Component) {
   function Clock(props) {
     _classCallCheck(this, Clock);
 
+    // launchClock() 실행
     var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
 
     _this.launchClock();
+    // 초기 상태에 현재 시작 추가
     _this.state = { currentTime: new Date().toLocaleString('en') };
     return _this;
   }
+  // 1초마다 상태 갱신하는 launchClock함수
+
 
   _createClass(Clock, [{
     key: 'launchClock',
@@ -41,7 +45,8 @@ var Clock = function (_React$Component) {
       return React.createElement(
         'div',
         null,
-        this.state.currentTime
+        React.createElement(AnalogDisplay, { time: this.state.currentTime }),
+        React.createElement(DigitalDisplay, { time: this.state.currentTime })
       );
     }
   }]);
