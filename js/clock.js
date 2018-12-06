@@ -11,18 +11,33 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Clock = function (_React$Component) {
   _inherits(Clock, _React$Component);
 
+  // currentTime 속성 초기 상태 설정
   function Clock(props) {
     _classCallCheck(this, Clock);
 
     var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
 
+    _this.launchClock();
     _this.state = { currentTime: new Date().toLocaleString('en') };
     return _this;
   }
 
   _createClass(Clock, [{
+    key: 'launchClock',
+    value: function launchClock() {
+      var _this2 = this;
+
+      setInterval(function () {
+        console.log('Updating time...');
+        _this2.setState({
+          currentTime: new Date().toLocaleString('en')
+        });
+      }, 1000);
+    }
+  }, {
     key: 'render',
     value: function render() {
+      console.log('Rendering Clock...');
       return React.createElement(
         'div',
         null,
