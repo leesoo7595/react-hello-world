@@ -101,4 +101,37 @@ var Content = function (_React$Component3) {
   return Content;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
+var CheckLogin = function (_React$Component4) {
+  _inherits(CheckLogin, _React$Component4);
+
+  function CheckLogin() {
+    _classCallCheck(this, CheckLogin);
+
+    return _possibleConstructorReturn(this, (CheckLogin.__proto__ || Object.getPrototypeOf(CheckLogin)).apply(this, arguments));
+  }
+
+  _createClass(CheckLogin, [{
+    key: 'render',
+    value: function render() {
+      var link = void 0;
+      if (this.props.user.session) link = React.createElement(
+        'a',
+        { href: '/logout' },
+        'logout'
+      );else link = React.createElement(
+        'a',
+        { href: '/login' },
+        'login'
+      );
+      return React.createElement(
+        'div',
+        null,
+        link
+      );
+    }
+  }]);
+
+  return CheckLogin;
+}(React.Component);
+
+ReactDOM.render(React.createElement(CheckLogin, null), document.getElementById('content'));

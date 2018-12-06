@@ -28,7 +28,18 @@ class Content extends React.Component {
   }
 }
 
+class CheckLogin extends React.Component {
+  render() {
+    let link
+    if (this.props.user.session)
+      link = <a href='/logout'>logout</a>
+    else
+      link = <a href='/login'>login</a>
+    return <div>{link}</div>
+  }
+}
+
 ReactDOM.render(
-  <Content/>,
+  <CheckLogin/>,
   document.getElementById('content')
 )
