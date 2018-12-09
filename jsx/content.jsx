@@ -1,6 +1,7 @@
 class Content extends React.Component {
   constructor(props) {
     super(props)
+    this.handleClick = this.handleClick.bind(this)
     this.state = {
       counter: 0
     }
@@ -12,7 +13,7 @@ class Content extends React.Component {
     return (
       <div>
         <button
-          onClick={this.handleClick.bind(this)}
+          onClick={this.handleClick}
           className="btn btn-primary">
           Don't Click Me {this.state.counter} times!
         </button>

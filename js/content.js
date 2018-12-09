@@ -16,6 +16,7 @@ var Content = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
 
+    _this.handleClick = _this.handleClick.bind(_this);
     _this.state = {
       counter: 0
     };
@@ -36,7 +37,7 @@ var Content = function (_React$Component) {
         React.createElement(
           "button",
           {
-            onClick: this.handleClick.bind(this),
+            onClick: this.handleClick,
             className: "btn btn-primary" },
           "Don't Click Me ",
           this.state.counter,
