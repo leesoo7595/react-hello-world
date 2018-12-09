@@ -1,4 +1,4 @@
 ReactDOM.render(
-  <SaveButton />,
+  <Mouse />,
   document.getElementById('content')
 )
