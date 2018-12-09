@@ -11,10 +11,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SaveButton = function (_React$Component) {
   _inherits(SaveButton, _React$Component);
 
-  function SaveButton() {
+  function SaveButton(props) {
     _classCallCheck(this, SaveButton);
 
-    return _possibleConstructorReturn(this, (SaveButton.__proto__ || Object.getPrototypeOf(SaveButton)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (SaveButton.__proto__ || Object.getPrototypeOf(SaveButton)).call(this, props));
+
+    _this.handleSave = _this.handleSave.bind(_this);
+    return _this;
   }
 
   _createClass(SaveButton, [{
@@ -27,7 +30,7 @@ var SaveButton = function (_React$Component) {
     value: function render() {
       return React.createElement(
         "button",
-        { onClick: this.handleSave.bind(this) },
+        { onClick: this.handleSave },
         "Save"
       );
     }
