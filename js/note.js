@@ -8,50 +8,52 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Clock = function (_React$Component) {
-  _inherits(Clock, _React$Component);
+var Note = function (_React$Component) {
+  _inherits(Note, _React$Component);
 
-  // currentTime 속성 초기 상태 설정
-  function Clock(props) {
-    _classCallCheck(this, Clock);
+  function Note() {
+    _classCallCheck(this, Note);
 
-    // launchClock() 실행
-    var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
-
-    _this.launchClock();
-    // 초기 상태에 현재 시작 추가
-    _this.state = { currentTime: new Date().toLocaleString('en') };
-    return _this;
+    return _possibleConstructorReturn(this, (Note.__proto__ || Object.getPrototypeOf(Note)).apply(this, arguments));
   }
-  // 1초마다 상태 갱신하는 launchClock함수
 
-
-  _createClass(Clock, [{
-    key: 'launchClock',
-    value: function launchClock() {
-      var _this2 = this;
-
-      setInterval(function () {
-        console.log('Updating time...');
-        _this2.setState({
-          currentTime: new Date().toLocaleString('en')
-        });
-      }, 1000);
+  _createClass(Note, [{
+    key: 'confirmLeave',
+    value: function confirmLeave(e) {
+      var confirmationMessage = '정말 닫으시겠습니까?';
+      e.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('beforeunload 이벤트에 confirmLeave 이벤트 리스너 등록');
+      window.addEventListener('beforeunload', this.confirmLeave);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('beforeunload 이벤트에 confirmLeave 이벤트 리스너 제거');
+      window.removeEventListener('beforeunload', this.confirmLeave);
     }
   }, {
     key: 'render',
     value: function render() {
-      console.log('Rendering Clock...');
+      console.log('Render');
       return React.createElement(
         'div',
         null,
-        React.createElement(AnalogDisplay, { time: this.state.currentTime }),
-        React.createElement(DigitalDisplay, { time: this.state.currentTime })
+        React.createElement(
+          'p',
+          null,
+          '\uBD80\uBAA8 \uCEF4\uD3EC\uB10C\uD2B8\uB294 ',
+          this.props.secondsLeft,
+          '\uCD08 \uB4A4\uC5D0 \uC81C\uAC70\uB41C\uB2E4.'
+        ),
+        React.createElement('input', { type: 'text' })
       );
     }
   }]);
 
-  return Clock;
+  return Note;
 }(React.Component);
-
-ReactDOM.render(React.createElement(Clock, null), document.getElementById('content'));
