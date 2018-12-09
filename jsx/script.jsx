@@ -1,4 +1,4 @@
 ReactDOM.render(
-  <Mouse />,
+  <Content />,
   document.getElementById('content')
 )

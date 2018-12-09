@@ -16,31 +16,33 @@ var Content = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
 
-    _this.launchClock();
     _this.state = {
-      counter: 0,
-      currentTime: new Date().toLocaleString()
+      counter: 0
     };
     return _this;
   }
 
   _createClass(Content, [{
-    key: "launchClock",
-    value: function launchClock() {
-      var _this2 = this;
-
-      setInterval(function () {
-        _this2.setState({
-          counter: ++_this2.state.counter,
-          currentTime: new Date().toLocaleString()
-        });
-      }, 1000);
+    key: "handleClick",
+    value: function handleClick(event) {
+      this.setState({ counter: ++this.state.counter });
     }
   }, {
     key: "render",
     value: function render() {
-      if (this.state.counter > 2) return React.createElement("div", null);
-      return React.createElement(Logger, { time: this.state.currentTime });
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "button",
+          {
+            onClick: this.handleClick.bind(this),
+            className: "btn btn-primary" },
+          "Don't Click Me ",
+          this.state.counter,
+          " times!"
+        )
+      );
     }
   }]);
 

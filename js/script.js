@@ -1,3 +1,3 @@
 'use strict';
 
-ReactDOM.render(React.createElement(Mouse, null), document.getElementById('content'));
+ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));

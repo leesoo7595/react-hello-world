@@ -1,25 +1,22 @@
 class Content extends React.Component {
   constructor(props) {
     super(props)
-    this.launchClock()
     this.state = {
-      counter: 0,
-      currentTime: (new Date()).toLocaleString()
+      counter: 0
     }
   }
-
-  launchClock() {
-    setInterval(() => {
-      this.setState({
-        counter: ++this.state.counter,
-        currentTime: (new Date()).toLocaleString()
-      })
-    }, 1000)
+  handleClick(event) {
+    this.setState({counter: ++this.state.counter})
   }
-
   render() {
-    if (this.state.counter > 2) return <div />
-    return <Logger time={this.state.currentTime}></Logger>
+    return (
+      <div>
+        <button
+          onClick={this.handleClick.bind(this)}
+          className="btn btn-primary">
+          Don't Click Me {this.state.counter} times!
+        </button>
+      </div>
+    )
   }
-
 }
